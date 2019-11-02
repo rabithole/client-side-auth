@@ -2,7 +2,7 @@ import axios from "axios"
 
 // A helper function so we don't have to keep repeating this
 export function getToken() {
-	return localStorage.getItem("token")
+	return localStorage.getItem("auth_token")
 }
 
 // Create an axios helper with some predefined values

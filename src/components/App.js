@@ -21,10 +21,19 @@ function App() {
 				{signedIn && <Link to="/logout">Logout</Link>}
 			</nav>
 
-			<Route exact path="/signin" component={Signin} />
+			<Route 
+				exact path="/signin" 
+				component={Signin} 
+			/>
 			{/* These routes will require an auth token to be set, due to our handy HOC */}
-			<ProtectedRoute exact path="/account" component={Account} />
-			<ProtectedRoute exact path="/logout" component={Logout} />
+			<ProtectedRoute 
+				exact path="/account" 
+				component={Account} 
+			/>
+			<ProtectedRoute 
+				exact path="/logout" 
+				component={Logout} 
+			/>
 		</div>
 	)
 }

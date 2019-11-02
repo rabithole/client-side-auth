@@ -1,5 +1,5 @@
 import React from "react"
-import { Route, Redirect } from "react-router-dom"
+import { Route, Redirect } from "react-router-dom"; // This makes ProtectedRoute a HOC.
 
 function ProtectedRoute(props) {
 	// We are essentially duplicating "props" here,
@@ -15,7 +15,7 @@ function ProtectedRoute(props) {
 		<Route {...rest} render={(renderProps) => {
 			// Use a render prop so our component is computed,
 			// allowing our token value to be set and deleted over time
-			if (localStorage.getItem("token")) {
+			if (localStorage.getItem("auth_ token")) {
 				// We are logged in, so render the component as normal
 				// Passing "renderProps" so "Component" has access to all
 				// the React Router stuff

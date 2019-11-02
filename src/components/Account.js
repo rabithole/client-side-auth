@@ -7,13 +7,14 @@ function Account(props) {
 		email: "",
 	})
 
+// This will set the user data to the state above then it will be displayed in the JSX below. 
 	useEffect(() => {
-		api().get("/me")
+		api().get("/me") // baseURL from api.js is inserted before /me.
 			.then(result => {
 				setUser({
-					name: result.data.name,
+					name: result.data.name, // this object shape is determined by the API. 
 					email: result.data.email,
-				})
+				}) 
 			})
 			.catch(error => {
 				console.log(error)
@@ -23,7 +24,7 @@ function Account(props) {
 	return (
 		<>
 			<h1>My Account</h1>
-
+		{/*setting state above to populate the DOM with the code below. */ }
 			<div className="account-row">Name: {user.name}</div>
 			<div className="account-row">Email: {user.email}</div>
 		</>
